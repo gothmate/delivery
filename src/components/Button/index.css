@@ -1,0 +1,15 @@
+button {
+    padding: .5rem;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+    background-color: #4E60FF;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    transition: 300ms ease-in-out;
+}
+button:hover {
+    filter: brightness(0.8);
+}
