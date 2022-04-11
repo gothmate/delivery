@@ -1,7 +1,6 @@
 button {
     padding: .5rem;
     font-family: 'Nunito', sans-serif;
-    font-size: 1.3rem;
     font-weight: 700;
     color: #fff;
     background-color: #4E60FF;
@@ -11,5 +10,7 @@ button {
     transition: 300ms ease-in-out;
 }
 button:hover {
-    filter: brightness(0.8);
+    color: #4E60FF;
+    background-color: #fff;
+    border: solid 2px #4E60FF;
 }

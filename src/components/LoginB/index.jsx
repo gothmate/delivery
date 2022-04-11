@@ -1,12 +1,11 @@
 import React from "react";
 import "./index.css";
+import Card from "../Card";
 
-const LoginB = () => {
+export default function LoginB() {
     return (
         <div className="loginb-body">
-            <p>Outro lado</p>
+            <Card />
         </div>
     )
 }
-
-export default LoginB;
