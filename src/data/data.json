@@ -1,0 +1,16 @@
+[
+    {
+        "name": "John Doe",
+        "profile_pic": "https://images.unsplash.com/photo-1518806118471-f28b20a1d79d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+        "stars": 5,
+        "date": "2022-04-01",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis, facere quos consequuntur expedita amet incidunt qui optio consequatur."
+    },
+    {
+        "name": "Jane Smith",
+        "profile_pic": "https://images.unsplash.com/photo-1542157585-ef20bfcce579?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=522&q=80",
+        "stars": 5,
+        "date": "2022-01-27",
+        "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis, facere quos consequuntur expedita amet incidunt qui optio consequatur."
+    }
+]
