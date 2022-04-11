@@ -21,11 +21,11 @@ export default function Login() {
                 <form className="login-area">
                     <div className="email-area">
                         <label htmlFor="email">Email</label>
-                        <input type="text" placeholder="name@exemple.com" />
+                        <input autoComplete="current-email" type="text" placeholder="name@exemple.com" />
                     </div>
                     <div className="password-area">
                         <label htmlFor="password" >Password</label>
-                        <input type="password" placeholder="minimum 8 characters" />
+                        <input autoComplete="current-password" type="password" placeholder="minimum 8 characters" />
                         <label className="check">
                             <input type="checkbox" />
                             Keep me logged in

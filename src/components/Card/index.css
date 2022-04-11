@@ -1,6 +1,7 @@
 .card-body {
     width: 380px;
     min-height: 200px;
+    max-height: 450px;
     padding: 15px;
     background: #f7f7f7;
     margin: 40px;
@@ -25,6 +26,11 @@ header {
     font-size: .8rem;
     border: solid 2px #ccc;
     border-radius: 5px;
+}
+
+.reviews {
+    overflow: hidden;
+    max-height: 300px;
 }
 
 .each-review {

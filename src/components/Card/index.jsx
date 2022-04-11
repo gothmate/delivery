@@ -1,14 +1,34 @@
-import React from "react";
+import {React, useState, useEffect} from "react";
 import "./index.css";
 import Button from "../Button";
 
 export default function Card() {
+    
+    const [review, setReview] = useState([]);
+  
+    useEffect(() => {
+        fetch('./data.json', {
+            headers: {
+                Accept: 'application/json'
+            }
+        }).then(res => res.json())
+            .then(res => {setReview(res.reviews)
+            })
+    }, [])
+
+    let rating = 0
+    review.map(item => {
+        rating += item.stars 
+        return (rating)
+    })
+
+
     return (
         <div className="card-body">
             <header>
                 <div className="rating">
                     <h4>Overall rating</h4>
-                    <p>4.5</p>
+                    <p>{parseFloat(rating/review.length).toFixed(1)}</p>
                 </div>
                 <Button>Leave review</Button>
             </header>
@@ -18,30 +38,22 @@ export default function Card() {
                     <option>Oldest first</option>
                 </select>
                 <div className="reviews">
-                    <div className="each-review">
-                        <div className="profile">
-                            <img src="https://images.unsplash.com/photo-1518806118471-f28b20a1d79d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="profile" />
-                        </div>
-                        <div className="review">
-                            <div className="intro">
-                                <h4>John Doo</h4>
-                                <p>...stars 10 days ago</p>
+                    {review.map(el => {
+                        return (
+                            <div key={el.id} className="each-review">
+                                <div className="profile">
+                                    <img src={el.profile_pic} alt="profile" />
+                                </div>
+                                <div className="review">
+                                    <div className="intro">
+                                        <h4>{el.name}</h4>
+                                        <p>{el.stars} stars {el.date}</p>
+                                    </div>
+                                    <p>{el.comment}</p>
+                                </div>
                             </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis, facere quos consequuntur expedita amet incidunt qui optio consequatur.</p>
-                        </div>
-                    </div>
-                    <div className="each-review">
-                        <div className="profile">
-                            <img src="https://images.unsplash.com/photo-1542157585-ef20bfcce579?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=522&q=80" alt="profile" />
-                        </div>
-                        <div className="review">
-                            <div className="intro">
-                                <h4>Suzane Smith</h4>
-                                <p>...stars 2 months ago</p>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero veritatis, facere quos consequuntur expedita amet incidunt qui optio consequatur.</p>
-                        </div>
-                    </div>
+                        )   
+                    })}
                 </div>
             </div>
         </div>
