@@ -1,6 +1,7 @@
 import {React, useState, useEffect} from "react";
 import "./index.css";
 import Button from "../Button";
+import Star from "../../assets/Vector.svg";
 
 export default function Card() {
     
@@ -17,11 +18,11 @@ export default function Card() {
     }, [])
 
     let rating = 0
+
     review.map(item => {
         rating += item.stars 
         return (rating)
     })
-
 
     return (
         <div className="card-body">
@@ -47,7 +48,7 @@ export default function Card() {
                                 <div className="review">
                                     <div className="intro">
                                         <h4>{el.name}</h4>
-                                        <p>{el.stars} stars {el.date}</p>
+                                        <p>{el.stars} <img src={Star} alt="estrela" />  stars {el.date}</p>
                                     </div>
                                     <p>{el.comment}</p>
                                 </div>
